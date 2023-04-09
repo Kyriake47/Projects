@@ -1,2 +1,3 @@
 Miasto=Brusy Imie=Anna Nazwisko=Kowalczyk 
-Miasto=Gdansk Nazwisko=Syty
+Miasto=Gdansk Nazwisko=Syty 
+Nazwisko=Gora
