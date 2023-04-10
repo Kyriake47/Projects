@@ -2,6 +2,7 @@
 #include<fstream>
 #include<string>
 #include <iomanip>
+#include<algorithm>
 
 // Program przepisuje wartoœci z pliku txt do tablicy, grupuj¹c je, wykrywaj¹c brakuj¹ce wartoœci
 
@@ -19,24 +20,23 @@ int main() {
 	
 	Read(table);
 	cout << "Wypisane z tablicy" << endl;
+	cout << endl;
 	cout << table[0][0] << endl;
 	cout << table[1][0] << endl;
 	cout << table[0][1] << endl;
 	cout << table[1][1] << endl;
 	cout << table[0][2] << endl;
 	cout << table[1][2] << endl;
-	
+	cout <<"-------------"<< endl;
 	cout << table[0][0] << endl;
 	cout << table[2][0] << endl;
 	cout << table[0][1] << endl;
 	cout << table[2][1] << endl;
 	cout << table[0][2] << endl;
 	cout << table[2][2] << endl;
-
+	cout << "-------------" << endl;
 	cout << table[0][2] << endl;
 	cout << table[3][2] << endl;
-
-
 
 	return 0;
 }
@@ -79,27 +79,29 @@ int AddToTable(string table[][3], string a, string b, int &i, int j, int k) {
 void Read(string table[][3]) {
 
 	string wyraz1;
-	 string wyraz2;
+	string wyraz2;
 	int j = 0;//numer kolumny
-	
 	int k = 0;//przepisanie j do porównania
 	fstream plik;
-	plik.open("tabela.txt", ios::in|ios::out);
-	cout << "Plik otwiera sie" << endl;
+	fstream plik2;
+//-------------------------------------------------------------------	
+//dodawanie spacji na koniec ka¿dej linii
+	plik.open("tabela.txt", ios::in);
+	plik2.open("tabela2.txt",ios::out);
 
-//string linia_tekstu;
-//int dlugosc;
-//	while (!plik.eof()) {
-		
-//		getline(plik, linia_tekstu);
-		//dlugosc = linia_tekstu.length();
-		//linia_tekstu += " ";
-//		std::cout <<":" << linia_tekstu << "\n";
-		//linia_tekstu.insert(dlugosc, " ");
-//		plik << linia_tekstu;
-//	}
+	string linia_tekstu;
+	string b = "";
+	while (getline(plik, linia_tekstu))
+	{
+		plik2 <<b<< linia_tekstu << ' ';
+		b = "\n";
+	}
+	plik.close();
+	plik2.close();
+//---------------------------------------------------------------
+//przepisywaniedanych do tablicy
+	plik.open("tabela2.txt", ios::in);
 	
-
 	while (!plik.eof()) {
 
 		getline(plik, wyraz1, '=');
@@ -109,13 +111,11 @@ void Read(string table[][3]) {
 			while (wyraz1.find_first_of('\n') != -1) {
 				wyraz1.replace(wyraz1.find_first_of('\n'), 1, "");
 			}
-
-
 			
 		k=AddToTable(table, wyraz1, wyraz2, i, j, k);
 		j = k;
 	}
 	
 	plik.close();
-
+	remove("tabela2.txt");
 }
