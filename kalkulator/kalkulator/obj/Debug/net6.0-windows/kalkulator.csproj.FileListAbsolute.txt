@@ -1,0 +1,17 @@
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\bin\Debug\net6.0-windows\kalkulator.exe
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\bin\Debug\net6.0-windows\kalkulator.deps.json
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\bin\Debug\net6.0-windows\kalkulator.runtimeconfig.json
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\bin\Debug\net6.0-windows\kalkulator.dll
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\bin\Debug\net6.0-windows\kalkulator.pdb
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.csproj.AssemblyReference.cache
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.Form1.resources
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.csproj.GenerateResource.cache
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.AssemblyInfoInputs.cache
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.AssemblyInfo.cs
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.csproj.CoreCompileInputs.cache
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.dll
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\refint\kalkulator.dll
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.pdb
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\kalkulator.genruntimeconfig.cache
+C:\Users\asus PC\Desktop\projekty unity\visual\kalkulator\kalkulator\obj\Debug\net6.0-windows\ref\kalkulator.dll
