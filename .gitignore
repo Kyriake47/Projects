@@ -1,0 +1,13 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+JakiToKat/.vs/*
+JakiToKat/JakiToKat/bin/*
+JakiToKat/JakiToKat/obj/*
+
+Kalkulator/.vs/*
+Kalkulator/Kalkulator/bin/*
+Kalkulator/Kalkulator/obj/*
+
+Plik tekstowy/.vs/*
+Plik tekstowy/x64/*
+Plik tekstowy/Plik tekstowy/x86/*
