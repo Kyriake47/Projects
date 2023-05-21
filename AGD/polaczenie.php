@@ -5,7 +5,7 @@ echo "Połączenie z bazą...";
 define("HOST", "localhost");
 define("DBUSER", "uagd");
 define("DBPASS", "pagd");
-define("DBNAME", "AGD");
+define("DBNAME", "bd_agd");
 
 $conn = new mysqli(HOST, DBUSER, DBPASS, DBNAME);
 

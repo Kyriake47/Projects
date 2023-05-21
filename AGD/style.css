@@ -1,28 +1,142 @@
-.btn-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: hsl(0, 98%, 52%);
-    --bs-btn-border-color: #0d6efd;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #0b5ed7;
-    --bs-btn-hover-border-color: #0a58ca;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #0a58ca;
-    --bs-btn-active-border-color: #0a53be;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #0d6efd;
-    --bs-btn-disabled-border-color: #0d6efd;
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
 }
 
+.btn-outline-danger {
+  --bs-btn-color: rgb(102, 102, 102);
+  --bs-btn-border-color: rgb(102, 102, 102);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgb(102, 102, 102);
+  --bs-btn-hover-border-color: rgb(102, 102, 102);
+  --bs-btn-focus-shadow-rgb: 220,53,69;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgb(102, 102, 102);
+  --bs-btn-active-border-color: rgb(102, 102, 102);
+  --bs-btn-active-shadow: inset 0 3px 5pxrgba(0,0,0,0.125);
+  --bs-btn-disabled-color: rgb(102, 102, 102);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: rgb(102, 102, 102);
+  border-radius: 0;
+  --bs-gradient: none;
+    width:235px;
+     height:60px;
+}
 
-.logowanie{
-height: 200px;
-  width: 50%;
+.nav-tabs {
+  --bs-nav-tabs-border-width: var(--bs-border-width);
+  --bs-nav-tabs-border-color: var(--bs-border-color);
+  --bs-nav-tabs-border-radius: var(--bs-border-radius);
+  --bs-nav-tabs-border-radius: var(--bs-border-radius2);
+  --bs-nav-tabs-link-hover-border-color: var(--bs-secondary-bg) var(--bs-secondary-bg) var(--bs-border-color);
+  --bs-nav-tabs-link-active-color: var(--bs-emphasis-color);
+  --bs-nav-tabs-link-active-bg: var(--bs-body-bg);
+  --bs-nav-tabs-link-active-border-color: var(--bs-border-color) var(--bs-border-color) var(--bs-body-bg);
+  border-top: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+border-bottom:none;
+
+}
+
+.nav-tabs .nav-link {
+  margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
+  border: var(--bs-nav-tabs-border-width) solid transparent;
+  border-bottom-left-radius: var(--bs-nav-tabs-border-radius);
+  border-bottom-right-radius: var(--bs-nav-tabs-border-radius);
+  border-top-left-radius: var(--bs-nav-tabs-border-radius2);
+  border-top-right-radius: var(--bs-nav-tabs-border-radius2);
+}
+
+:root, [data-bs-theme=light]{
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius2: 0.5rem;
+}
+.gora{
+  height: 150px;
+width:100%;
+  margin:40px 0px 40px 0px;
+  background-color: rgb(176, 230, 192);
+  float:right;
+}
+.prawy{
+height: 400px;
+width: 400px;
+margin:20px 0px 60px 0px;
   background-color: powderblue;
   float:right;
 }
 
-.informacje{
-  
+.logowanie{
+margin-left:20px;
+margin-right: 20px;
+margin-top: 20px;
+margin-bottom: 36px;
+height: 300px;
 }
+
+.lewy{
+  height: 400px;
+  width: 800px;
+  margin:20px 0px 60px 0px;
+  background-color: red;
+  float:left;
+  padding-top:70px;
+  padding-bottom:70px;
+}
+
+.lewy_przyciski{
+height: 75px;
+width:250px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 30px;
+margin-bottom: 30px;
+background-color: rgb(173, 173, 173);
+display: flex;
+  align-items: center ;
+  position: relative;
+
+}
+.lewy_przyciski_srodek{
+height: 65px;
+width:240px;
+margin:5px;
+background-color: rgb(173, 173, 173);
+border: 4px solid rgb(102, 102, 102); 
+}
+
+.nowe-zamowienie-l{
+width:500px;
+margin-left: 130px;
+margin-right: 130px;
+margin-top: 30px;
+margin-bottom: 30px;
+padding: 20px;
+float:left;
+}
+
+.nowe-zamowienie-p{
+  width:500px;
+margin-left: 130px;
+margin-right: 130px;
+margin-top: 30px;
+margin-bottom: 30px;
+padding: 20px;
+  float: right;
+  }
+
+
+
+
+
