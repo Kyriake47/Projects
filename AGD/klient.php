@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include("polaczenie.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,8 +15,8 @@ session_start();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" type="text/javascript"></script>
   <script type="text/javascript">
     jQuery(function($){
-       $("#kod").mask("99-999");
-       $("#kod2").mask("999-999-999");
+       $(".kod").mask("99-999");
+       $(".kod2").mask("999-999-999");
     });
   </script>
 
@@ -60,22 +61,40 @@ session_start();
         </div>
       </nav>
 
+
+
+
+
+
+
+
       <div class="tab-content">
       <div class="tab-pane active" id="nowe-zamowienie" >
 
 <div>
+
+
+      <?php    
+
+ $id_user=$_SESSION["userId"];
+ $sql="SELECT * FROM data WHERE Id_user=$id_user";
+ $res = $conn -> query($sql);
+ $row=mysqli_fetch_array($res);
+ 
+  ?>
+
         
         <form action="wyslij_zamowienie.php" method="POST">
           <div class="nowe-zamowienie-l" >
           <legend>Dane zamawiającego</legend>
           <div class="input-group mb-3" >
           <span class="input-group-text">Imię</span>
-          <input class="form-control" name="name" type="text" placeholder="Imię" >
+          <input class="form-control" name="name" type="text" placeholder="Imię" value=<?php echo $row["Name"]?> >
         </div>
         
         <div class="input-group">
           <span class="input-group-text">Nazwisko</span>
-          <input class="form-control" name="last_name" type="text" placeholder="Nazwisko" >
+          <input class="form-control" name="last_name" type="text" placeholder="Nazwisko" value=<?php echo $row["Last_name"]?> >
         </div>
 
         <legend>Adres</legend>
@@ -83,30 +102,30 @@ session_start();
 
         <div class="input-group">
           <span class="input-group-text">Miejscowość</span>
-          <input class="form-control" name="city" type="text" placeholder="Miejscowość" >
+          <input class="form-control" name="city" type="text" placeholder="Miejscowość" value=<?php echo $row["City"]?>>
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text">Kod pocztowy</span>
-          <input class="form-control" name="zip_code" type="text" id="kod" placeholder="99-999" >
+          <input class="form-control kod" name="zip_code" type="text" placeholder="99-999" value=<?php echo $row["Zip_code"]?> >
         </div>
 
 
         <div class="input-group">
           <span class="input-group-text">Ulica</span>
-          <input class="form-control" name="street" type="text" placeholder="Ulica" >
+          <input class="form-control" name="street" type="text" placeholder="Ulica" value=<?php echo $row["Street"]?> >
           
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text">Numer</span>
-          <input class="form-control" name="nr_h" type="text" placeholder="Nr domu" >
-          <input class="form-control" name="nr_f" type="text" placeholder="Nr mieszkania" >
+          <input class="form-control" name="nr_h" type="text" placeholder="Nr domu" value=<?php echo $row["Nr_h"]?> >
+          <input class="form-control" name="nr_f" type="text" placeholder="Nr mieszkania" value=<?php echo $row["Nr_f"]?> >
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text">Telefon kontaktowy</span>
-          <input class="form-control" name="phone_nr" type="text" id="kod2" placeholder="999-999-999" >
+          <input class="form-control kod2" name="phone_nr" type="text" placeholder="999-999-999" value=<?php echo $row["Telephone"]?>>
         </div>
 </div>
       
@@ -131,7 +150,7 @@ session_start();
             <div class="mb-3">
               <legend>Informacje o awarii</legend>
               
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea class="form-control" name="info" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
              <div class="mb-5">
 
@@ -148,8 +167,10 @@ session_start();
 
 
       </div>
+
       <div class="tab-pane" id="moje-dane" >
-       
+       <div class="dane">
+
         <legend>Informacje o urzytkowniku</legend>
 
         <form action="dane.php" method="POST">
@@ -167,15 +188,17 @@ session_start();
               <input type="text" name="id" readonly class="form-control-plaintext" id="nr_użytkownika"  value=<?php echo $_SESSION["userId"];?>>
             </div>
           </div>
-     
+ 
           <div class="input-group mb-3" >
           <span class="input-group-text">Imię</span>
-          <input class="form-control" type="text" placeholder="Imię" >
+          <input class="form-control" name="name" type="text" placeholder="Imię" value=<?php echo $row["Name"]?> >
         </div>
+
+
         
         <div class="input-group mb-3">
           <span class="input-group-text">Nazwisko</span>
-          <input class="form-control" type="text" placeholder="Nazwisko" >
+          <input class="form-control" name="last_name"  type="text" placeholder="Nazwisko" value=<?php echo $row["Last_name"]?>>
         </div>
 
      
@@ -183,37 +206,104 @@ session_start();
 
         <div class="input-group mb-3">
           <span class="input-group-text">Miejscowość</span>
-          <input class="form-control" type="text" placeholder="Miejscowość" >
+          <input class="form-control" name="city" type="text" placeholder="Miejscowość" value=<?php echo $row["City"]?>>
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text">Kod pocztowy</span>
-          <input class="form-control" type="text" id="kod" placeholder="99-999" >
+          <input class="form-control kod" name="zip_code" type="text" placeholder="99-999" value=<?php echo $row["Zip_code"]?>>
         </div>
 
 
         <div class="input-group mb-3">
           <span class="input-group-text">Ulica</span>
-          <input class="form-control" type="text" placeholder="Ulica" >
+          <input class="form-control" name="street" type="text" placeholder="Ulica" value=<?php echo $row["Street"]?>>
           
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text">Numer</span>
-          <input class="form-control" type="text" placeholder="Nr domu" >
-          <input class="form-control" type="text" placeholder="Nr mieszkania" >
+          <input class="form-control" name="nr_h" type="text" placeholder="Nr domu" value=<?php echo $row["Nr_h"]?> >
+          <input class="form-control" name="nr_f" type="text" placeholder="Nr mieszkania" value=<?php echo $row["Nr_f"]?>>
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text">Telefon kontaktowy</span>
-          <input class="form-control" type="text" id="kod2" placeholder="999-999-999" >
+          <input class="form-control kod2" name="phone_nr" type="text" placeholder="999-999-999" value=<?php echo $row["Telephone"]?>>
         </div>
-        <button type="submit" class="w-100 btn btn-lg btn-primary" type="submit">Zapisz dane</button>
+        <button type="submit" class="w-30 btn btn-lg btn-primary" type="submit">Zapisz dane</button>
+
         </form>
+
+
+  </div>
         </div>
 
 
-      <div class="tab-pane" id="historia-zamowien">ghi</div>
+      <div class="tab-pane" id="historia-zamowien">
+        
+      <?php
+
+   
+
+
+
+
+
+
+$sql="SELECT * FROM orders WHERE Id_user=$id_user";
+$res = $conn -> query($sql);
+
+      ?>
+
+
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Data</th>
+      <th scope="col">Typ urządzenia</th>
+      <th scope="col">Model</th>
+      <th scope="col">Opis zgłoszenia</th>
+      <th scope="col">Imię zamawiającego</th>
+      <th scope="col">Nazwisko zamawiającego</th>  
+      <th scope="col">Miejscowość</th>
+      <th scope="col">Ulica</th>
+      <th scope="col">Nr domu</th>
+      <th scope="col">Nr_ mieszkania</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php 
+
+$i=1;
+while($row = $res->fetch_assoc()){
+  echo ('<tr><th scope="row">'.$i.'</th>
+  <td>'.$row["Data"].'</td>
+  <td>'.$row["Type"].'</td>
+  <td>'.$row["Model"].'</td>
+ <td>'.$row["Info"].'</td>
+  <td>'.$row["Name"].'</td>
+  <td>'.$row["Last_name"].'</td>
+  <td>'.$row["City"].'</td>
+  <td>'.$row["Street"].'</td>
+  <td>'.$row["Nr_h"].'</td>
+ <td>'.$row["Nr_f"].'</td></tr>');
+$i++;
+
+}
+
+
+?>
+</tbody>
+</table>
+
+
+
+      
+      
+      
+      </div>
       <div class="tab-pane" id="oferta">jke</div>
       </div>
 </body>

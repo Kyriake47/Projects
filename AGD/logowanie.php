@@ -19,7 +19,7 @@ include("polaczenie.php");
     $stmt2=mysqli_prepare($conn,$sql2);
     mysqli_stmt_bind_param($stmt2,'ss',$login,$haslo);
 
-    $sqlu = "SELECT Id FROM Users
+    $sqlu = "SELECT Id_user FROM Users
     WHERE Login=? AND Password=?";
      $stmtu=mysqli_prepare($conn,$sqlu);
      mysqli_stmt_bind_param($stmtu,'ss',$login,$haslo);
@@ -48,13 +48,14 @@ $resu = mysqli_stmt_get_result($stmtu);
               
               
               if($row["Function"]=="U"){
-              $id_row2=$row2["Id"];
+              $id_row2=$row2["Id_user"];
             //  echo "$id_row2";
                
               $_SESSION["userId"]=$id_row2;
                 header('Location: klient.php');//?id='.$id_row2);
                 echo "przekierowanie na strone uzytkownika.<br>";
                 
+              
               }
               else if($row["Function"]=="P")
               {

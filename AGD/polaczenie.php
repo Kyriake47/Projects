@@ -1,6 +1,6 @@
 <?php
 
-echo "Połączenie z bazą...";
+// echo "Połączenie z bazą...";
 
 define("HOST", "localhost");
 define("DBUSER", "uagd");

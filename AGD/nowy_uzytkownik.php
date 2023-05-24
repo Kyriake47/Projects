@@ -26,7 +26,7 @@ catch(Exception $e){
 //odpytanie o id dopiero dodanego użytownika i dodanie tego id do drgiej tabeli o nazwie data
 
 try{
-  $sql2 = "SELECT Id FROM Users
+  $sql2 = "SELECT Id_user FROM Users
   WHERE Login=? AND Password=?";
   $stmt2=mysqli_prepare($conn,$sql2);
   mysqli_stmt_bind_param($stmt2,'ss',$login,$haslo);
@@ -37,13 +37,14 @@ try{
 
  $row=mysqli_fetch_array($res2);
 
- echo ($row["Id"]);
- $Id=$row["Id"];
+ echo ($row["Id_user"]);
+ $Id=$row["Id_user"];
 
- $sql3 = "INSERT INTO Data(Id, Name, Last_name, City, Zip_code, Street, House_number, Home_number, Telephone)
+ $sql3 = "INSERT INTO Data(Id_user, Name, Last_name, City, Zip_code, Street, Nr_h, Nr_f, Telephone)
   VALUES ($Id,'','','','','','','','')";
-  $stmt3=mysqli_prepare($conn,$sql3);
-  mysqli_stmt_execute($stmt3);
+   $res = $conn -> query($sql3);
+  //$stmt3=mysqli_prepare($conn,$sql3);
+ // mysqli_stmt_execute($stmt3);
 
 
 }catch(Exception $e){echo ("nie mozna dodać id do tabeli data");}
