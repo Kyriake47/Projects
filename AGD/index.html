@@ -11,54 +11,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css"/>
 
-
+  
+<!-- google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
 
 
 </head>
-  <body>
-   <div class="container ;">
+  <body >
 
 
-    <section class="panel panel-primary ">
+   <div class="glowna" >
+
+
+    <section class="glowna panel panel-primary ">
 
       
-<div class="gora">
-      <h1 class="panel-heading text-center">Zarezerwuj naprawę online</h1>
-     
-</div>
-
-<div>
-<div class="lewy">
-
-  <div  class="lewy_przyciski" >
-  <div class="lewy_przyciski_srodek">
-
-<button type="button"  class="btn btn-outline-danger" >
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
-  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
-</svg>
-Oferta
- </button>
- 
-   </div>
-  </div>
-
-  <div  class="lewy_przyciski" >
-    <div class="lewy_przyciski_srodek">
-  
-  <button type="button"  class="btn btn-outline-danger" >
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-    </svg>
-  Mapa
-   </button>
-   
-     </div>
+    <div class="logo">
+      <img src="logo2.png" class="logoObraz">
+      <div class="tekstLogo">
+        AGDNaprawa.pl
+      </div>
+      <!--<img style=" width: 100%; height: 100%;" src="logo.png"/>-->
+          
     </div>
 
+    <div class="srodek">
+    <div class="lewy ramka">
+
+      Czy szukasz szybkiego i wygodnego sposobu na naprawę sprzętu AGD? Jeśli tak, to nasza strona internetowa jest dla Ciebie idealnym rozwiązaniem. Z naszą inteligentną rezerwacją naprawy online możesz zamówić usługę w kilku prostych krokach. Wystarczy, że podasz model i markę urządzenia, opiszesz problem i wybierzesz dogodny termin. Nie musisz martwić się o koszty ani jakość naprawy, ponieważ oferujemy konkurencyjne ceny i gwarancję na wykonaną usługę. Nie zwlekaj i zarezerwuj naprawę sprzętu AGD online już dziś!
+
 </div>
 
-<div class="prawy">
+<div class="prawy ramka" style="background-color:rgb(255, 255, 255); ">
 
    <div class="logowanie">   
 
@@ -90,7 +76,7 @@ Oferta
         <form action="nowy_uzytkownik.php" method="POST">
         <br>
         <div class="form-floating">
-       <input type="text" name="email" class="form-control" placeholder="E-mail" required><br>
+       <input type="text" name="email" class="form-control" placeholder="name@email.pl" required><br>
        <label for="floatingInput">Podaj adres e-mail</label>
        </div>
        <div class="form-floating">
@@ -102,14 +88,23 @@ Oferta
        <label for="floatingInput">Utwórz hasło</label>
   
        </div>
-       <button type="submit" class="w-100 btn btn-lg btn-primary" type="submit">Zarejestruj się</button>
+       <button type="submit"  class="w-100 btn btn-lg btn-primary" type="submit">Zarejestruj się</button>
+
       </form>
+      
       </div>
+
+
     </div>
     
 </div>
+
+
+
+
+
 <!-- menu-zakladki-->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-tabs " id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Zaloguj się</button>
       </li>
@@ -118,7 +113,51 @@ Oferta
       </li>
     </ul>
  
-</div>    
+</div>  
+
+
+<div class="popup" id="popup">
+        <img src="ok.png">
+        <h2>Udało się!</h2>
+        <p>Dodano użytkownika.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+
+      <div class="popup" id="popup2">
+        <img src="error.png">
+        <h2>Coś poszło nie tak</h2>
+        <p>Spróbuj jeszcze raz</p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+
+
+      <script>
+let popup=document.getElementById("popup");
+let popup2=document.getElementById("popup2");
+//$log = $_POST["log"];
+const searchParams = new URLSearchParams(window.location.search)
+log=searchParams.get("log");
+
+if(log==1)
+{
+popup.classList.add("open-popup");
+}else if(log==5){
+  popup2.classList.add("open-popup");
+}
+else{
+popup.classList.remove("open-popup");
+popup2.classList.remove("open-popup");
+}
+
+
+
+function closePopup(){
+  popup.classList.remove("open-popup");
+  popup2.classList.remove("open-popup");
+}
+
+        </script>
+      </script>
 
 </div>
       <!--   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36294.89110481195!2d19.351470325379914!3d54.18183403950741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd4b9fa5df0e85%3A0x5a7f3b09b895c3a9!2zRWxibMSFZw!5e0!3m2!1spl!2spl!4v1682111491241!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -128,7 +167,26 @@ Oferta
 
 
     </div>
+    <div class="DolnyLewyRog">
+      <div style="display:flex">
+        <div class="kolo">
+          <a href="oferta.html">
+            <svg href="oferta.html" style="margin-top:9px;fill: rgb(0, 0, 0);" width="32" height="32" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+            </svg>
+          </a>
+        </div>
 
+        <div class="kolo">
+          <a href="mapa.html">
+            <svg href="mapa.html" style="margin-top:9px; fill: rgb(0, 0, 0);" width="32" height="32" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            </svg>
+          </a>
+        </div>
+        
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   
