@@ -11,3 +11,8 @@ Kalkulator/Kalkulator/obj/*
 PlikTekstowy/.vs/*
 PlikTekstowy/x64/*
 PlikTekstowy/Plik tekstowy/x64/*
+
+Dodawanie i odejmowanie/.vs/*
+Dodawanie i odejmowanie/Dodawanie i odejmowanie/obj/*
+Dodawanie i odejmowanie/Dodawanie i odejmowanie/bin/*
+*.cache

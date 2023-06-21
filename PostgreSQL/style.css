@@ -1,0 +1,41 @@
+.zewnetrzny_gora{
+  padding-left:200px;
+  padding-top: 50px;
+  margin:0px;
+  width:100%;
+  
+}
+
+.zewnetrzny_dol{
+  padding-left:150px;
+  width:100%;
+  margin:50px;
+}
+
+.lewy{
+ display:inline-block;
+    height: 550px;
+    width:400px;
+    padding: 50px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(105, 105, 212);
+  
+   
+
+}
+
+.prawy{
+  display:inline-block;
+    margin-left:100px;
+    height: 400px;
+    width:550px;
+    padding: 50px;
+    padding-top: 62px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(105, 105, 212);
+   
+   
+    
+}
