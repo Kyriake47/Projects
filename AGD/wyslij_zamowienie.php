@@ -2,6 +2,7 @@
 session_start();
 include("polaczenie.php");
 
+$status=0;
 //zmienne
 
  $id_user=$_SESSION["userId"];
@@ -18,7 +19,7 @@ $imie = mysqli_real_escape_string($conn,$_POST["name"]);
   $info=mysqli_real_escape_string($conn,$_POST["info"]);
   $data = mysqli_real_escape_string($conn,$_POST["date"]);
  
-  
+
  
 
 //tworzenie tabeli z zamówieniami
@@ -53,9 +54,19 @@ mysqli_stmt_bind_param($stmt,'sssssiisssss',$imie,$nazwisko,$miejscowosc,$kod_po
 try{
   mysqli_stmt_execute($stmt);
   $res =  mysqli_stmt_get_result($stmt);
+  $status=1;
   }
   catch(Exception $e){
+    $status=5;
       echo "Bład dodawania zamówienia do bazy<br>";
     }
+    try{
+$sql="DELETE FROM dates WHERE Date='$data'";
+$res = $conn -> query($sql);
+}
+catch(Exception $e){
+  $status=5;
+}
 
+    header('Location: klient.php?log='.strval($status));
 ?>

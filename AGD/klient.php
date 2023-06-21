@@ -21,7 +21,7 @@ include("polaczenie.php");
   </script>
 
   </head>
-  <body>
+  <body style="background-color: rgb(238, 238, 238);">
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -31,31 +31,34 @@ include("polaczenie.php");
             <!-- obrazek menu-->
             <div class="container">
                 <a class="navbar-brand" href="#">
-                  <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Naprawa sprzętu AGD" width="30" height="24">
+                  <img src="logo2.png" alt="Naprawa sprzętu AGD" width="50" height="50">
+                  
                 </a>
               </div>
 <!-- menu zakładki-->
           <div class="collapse navbar-collapse" id="navbarNavDropdown" role="tablist">
             <ul class="navbar-nav">
                 <li class="nav-item" >
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#nowe-zamowienie" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">Zamów naprawę</button>
+                    <button class="nav-link2 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#nowe-zamowienie" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">Zamów naprawę</button>
                   </li>
                   <li class="nav-item" >
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#moje-dane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Moje dane</button>
+                    <button class="nav-link2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#moje-dane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Moje dane</button>
                   </li>
                   <li class="nav-item" >
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#historia-zamowien" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Historia zamówień</button>
+                    <button class="nav-link2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#historia-zamowien" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Historia zamówień</button>
                   </li>
               <li class="nav-item dropdown" >
-                <button class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link2 dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   O firmie
                 </button>
                 <ul class="dropdown-menu">
-                  <li><button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#oferta" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Oferta</button></li>
-                  <li><button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Cennik</button></li>
-                  <li><button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Mapa</button></li>
+                  <a href="oferta.html"><li><button class="nav-link2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#oferta" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Oferta</button></li></a>
+                  <a href="mapa.html"><li><button class="nav-link2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Mapa</button></li></a>
                 </ul>
               </li>
+              <li class="nav-item" >
+                    <a href="wyloguj.php"><button class="nav-link2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#wyloguj" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Wyloguj</button></a>
+                  </li>
             </ul>
           </div>
         </div>
@@ -63,7 +66,7 @@ include("polaczenie.php");
 
 
 
-
+ 
 
 
 
@@ -73,8 +76,7 @@ include("polaczenie.php");
 
 <div>
 
-
-      <?php    
+<?php    
 
  $id_user=$_SESSION["userId"];
  $sql="SELECT * FROM data WHERE Id_user=$id_user";
@@ -82,6 +84,7 @@ include("polaczenie.php");
  $row=mysqli_fetch_array($res);
  
   ?>
+     
 
         
         <form action="wyslij_zamowienie.php" method="POST">
@@ -152,12 +155,54 @@ include("polaczenie.php");
               
               <textarea class="form-control" name="info" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-             <div class="mb-5">
+            
 
-              <label for="date">Wybierz datę naprawy</label>
-              <input type="date" name="date" id="date-local">
-             </div>
-             <button type="submit" value="wyslij_zamowienie" class="w-30 btn btn-lg btn-primary" >Wyślij zgłoszenie</button> 
+
+
+
+
+             
+           <input  id='dataselect' style="display: none;" name="date">
+    <div class="list-group" id="list-tab" role="tablist">
+    <?php 
+
+$sql="SELECT * FROM dates ORDER BY Date";
+$res = $conn -> query($sql);
+
+
+while($row = $res->fetch_assoc()){
+  echo ('<tr>
+  <td><a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" value="'.$row["Date"].'" aria-controls="list-home">'.$row["Date"].'</a>
+  </td>
+  
+ </tr>');
+
+}
+
+?>
+    <script>
+    $('#list-tab').on('click', function (e) 
+    {
+      document.getElementById('dataselect').value=e.target.innerHTML;
+    })
+    </script>
+
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+             <button type="submit" value="wyslij_zamowienie" class="w-30 btn btn-lg btn-primary2 marginesy" >Wyślij zgłoszenie</button> 
  </div>
 
           </form>
@@ -171,7 +216,7 @@ include("polaczenie.php");
       <div class="tab-pane" id="moje-dane" >
        <div class="dane">
 
-        <legend>Informacje o urzytkowniku</legend>
+        <legend>Informacje o użytkowniku</legend>
 
         <form action="dane.php" method="POST">
 
@@ -179,6 +224,14 @@ include("polaczenie.php");
            //$id = $_GET["id"];
        // echo($_SESSION["userId"]);
         ?>
+<?php    
+
+
+$sql="SELECT * FROM data WHERE Id_user=$id_user";
+$res = $conn -> query($sql);
+$row=mysqli_fetch_array($res);
+
+ ?>
 
 
 
@@ -231,7 +284,7 @@ include("polaczenie.php");
           <span class="input-group-text">Telefon kontaktowy</span>
           <input class="form-control kod2" name="phone_nr" type="text" placeholder="999-999-999" value=<?php echo $row["Telephone"]?>>
         </div>
-        <button type="submit" class="w-30 btn btn-lg btn-primary" type="submit">Zapisz dane</button>
+        <button type="submit" class="w-30 btn btn-lg btn-primary2" type="submit">Zapisz dane</button>
 
         </form>
 
@@ -306,5 +359,51 @@ $i++;
       </div>
       <div class="tab-pane" id="oferta">jke</div>
       </div>
+
+
+
+
+
+      <div class="popup" id="popup">
+        <img src="ok.png">
+        <h2>Udało się!</h2>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+
+      <div class="popup" id="popup2">
+        <img src="error.png">
+        <h2>Coś poszło nie tak</h2>
+        <p>Spróbuj jeszcze raz</p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+
+
+      <script>
+let popup=document.getElementById("popup");
+let popup2=document.getElementById("popup2");
+//$log = $_POST["log"];
+const searchParams = new URLSearchParams(window.location.search)
+log=searchParams.get("log");
+
+if(log==1)
+{
+popup.classList.add("open-popup");
+}else if(log==5){
+  popup2.classList.add("open-popup");
+}
+else{
+popup.classList.remove("open-popup");
+popup2.classList.remove("open-popup");
+}
+
+
+
+function closePopup(){
+  popup.classList.remove("open-popup");
+  popup2.classList.remove("open-popup");
+}
+
+        </script>
+
 </body>
 </html>

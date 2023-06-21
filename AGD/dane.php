@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("polaczenie.php");
-
+$status=0;
 //zmienne
 
  $id_user=$_SESSION["userId"];
@@ -49,16 +49,21 @@ Telephone=?
 WHERE Id_user=$id_user;";
 //(Id_user,Name,Last_name, City,Zip_code,Street, Nr_h,Nr_f, Telephone)
 //VALUES ($id_user,?,?,?,?,?,?,?,?)";
-$stmt=mysqli_prepare($conn,$sql);
-mysqli_stmt_bind_param($stmt,'sssssiis',$imie,$nazwisko,$miejscowosc,$kod_pocztowy,$ulica,$nr_domu,$nr_mieszkania,$telefon);
+
  
 try{
+$stmt=mysqli_prepare($conn,$sql);
+mysqli_stmt_bind_param($stmt,'sssssiis',$imie,$nazwisko,$miejscowosc,$kod_pocztowy,$ulica,$nr_domu,$nr_mieszkania,$telefon);
+
+
   mysqli_stmt_execute($stmt);
   $res =  mysqli_stmt_get_result($stmt);
+  $status=1;
   }
   catch(Exception $e){
       echo "Bład dodawania danych do bazy<br>";
+      $status=5;
     }
-
+    header('Location: klient.php?log='.strval($status));
 ?>
 
